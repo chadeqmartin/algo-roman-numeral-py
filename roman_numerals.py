@@ -1,7 +1,7 @@
 def to_roman(num):
     romanAnswer = ''
 
-    romanValues = {
+    roman_values = {
         'M': 1000,
         'CM': 900,
         'D': 500,
@@ -16,9 +16,11 @@ def to_roman(num):
         'IV': 4,
         'I': 1
     }
-    for key in romanValues:
-        while num >= romanValues[key]:
+    priority_list = list(roman_values.keys())
+
+    for key in priority_list:
+        while num >= roman_values[key]:
             romanAnswer += key
-            num -= romanValues[key]
+            num -= roman_values[key]
     
     return romanAnswer
